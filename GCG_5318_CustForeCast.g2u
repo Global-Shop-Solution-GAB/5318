@@ -1,0 +1,1106 @@
+Program.Sub.ScreenSU.Start
+Gui.fImpMaintOrImport..Create
+Gui.fImpMaintOrImport..Caption("Forecast Convert Maintenance")
+Gui.fImpMaintOrImport..Size(12855,3585)
+Gui.fImpMaintOrImport..MinX(0)
+Gui.fImpMaintOrImport..MinY(0)
+Gui.fImpMaintOrImport..Position(0,0)
+Gui.fImpMaintOrImport..BackColor(-2147483633)
+Gui.fImpMaintOrImport..MousePointer(0)
+Gui.fImpMaintOrImport..Event(UnLoad,fImpMaintOrImport_UnLoad)
+Gui.fImpMaintOrImport.lblCustomer.Create(Label,"Customer",True,1545,255,0,150,255,True,0,"Arial",8,-2147483633,0)
+Gui.fImpMaintOrImport.txtCustID.Create(TextBox,"",True,900,300,0,2190,165,True,0,"Arial",8,-2147483626,1)
+Gui.fImpMaintOrImport.txtCustID.Locked(True)
+Gui.fImpMaintOrImport.txtCustName.Create(TextBox,"",True,2835,300,0,3180,165,True,0,"Arial",8,-2147483626,1)
+Gui.fImpMaintOrImport.txtCustName.Locked(True)
+Gui.fImpMaintOrImport.cmdBrwCust.Create(Button)
+Gui.fImpMaintOrImport.cmdBrwCust.Size(360,375)
+Gui.fImpMaintOrImport.cmdBrwCust.Position(6090,120)
+Gui.fImpMaintOrImport.cmdBrwCust.Caption("^")
+Gui.fImpMaintOrImport.cmdBrwCust.Event(Click,cmdBrwCust_Click)
+Gui.fImpMaintOrImport.ddlInvSource.Create(DropDownList)
+Gui.fImpMaintOrImport.ddlInvSource.Size(4260,330)
+Gui.fImpMaintOrImport.ddlInvSource.Position(2190,945)
+Gui.fImpMaintOrImport.ddlInvSource.Event(Change,ddlInvSource_Change)
+Gui.fImpMaintOrImport.ddlInvSource.Event(Click,ddlInvSource_Change)
+Gui.fImpMaintOrImport.lblInvSource.Create(Label,"Inventory Source",True,1965,255,0,150,1050,True,0,"Arial",8,-2147483633,0)
+Gui.fImpMaintOrImport.lblImpSource.Create(Label,"Import Source",True,1965,255,0,150,645,True,0,"Arial",8,-2147483633,0)
+Gui.fImpMaintOrImport.ddlImpSource.Create(DropDownList)
+Gui.fImpMaintOrImport.ddlImpSource.Size(4260,330)
+Gui.fImpMaintOrImport.ddlImpSource.Position(2190,540)
+Gui.fImpMaintOrImport.ddlImpSource.Event(Change,ddlImpSource_Change)
+Gui.fImpMaintOrImport.ddlImpSource.Event(Click,ddlImpSource_Change)
+Gui.fImpMaintOrImport.lblLnType.Create(Label,"Line Type",True,1965,255,0,150,1455,True,0,"Arial",8,-2147483633,0)
+Gui.fImpMaintOrImport.ddlLineType.Create(DropDownList)
+Gui.fImpMaintOrImport.ddlLineType.Size(4260,330)
+Gui.fImpMaintOrImport.ddlLineType.Position(2190,1350)
+Gui.fImpMaintOrImport.ddlLineType.Event(Change,ddlLineType_Change)
+Gui.fImpMaintOrImport.ddlLineType.Event(Click,ddlLineType_Change)
+Gui.fImpMaintOrImport.frameMap.Create(Frame)
+Gui.fImpMaintOrImport.frameMap.Size(12390,4680)
+Gui.fImpMaintOrImport.frameMap.Position(150,2460)
+Gui.fImpMaintOrImport.lbl1.Create(Label,"Import Header List of Import File",True,3480,255,0,60,195,True,0,"Arial",8,-2147483633,0)
+Gui.fImpMaintOrImport.lbl1.Parent("frameMap")
+Gui.fImpMaintOrImport.txtImpHeader.Create(TextboxM)
+Gui.fImpMaintOrImport.txtImpHeader.Size(6045,930)
+Gui.fImpMaintOrImport.txtImpHeader.Position(60,435)
+Gui.fImpMaintOrImport.txtImpHeader.Parent("frameMap")
+Gui.fImpMaintOrImport.cmdImportHeaderList.Create(Button)
+Gui.fImpMaintOrImport.cmdImportHeaderList.Size(6060,375)
+Gui.fImpMaintOrImport.cmdImportHeaderList.Position(60,1425)
+Gui.fImpMaintOrImport.cmdImportHeaderList.Parent("frameMap")
+Gui.fImpMaintOrImport.cmdImportHeaderList.Caption("Import Header List")
+Gui.fImpMaintOrImport.cmdImportHeaderList.Event(Click,cmdImportHeaderList_Click)
+Gui.fImpMaintOrImport.lbl2.Create(Label,"Map Key Fields",True,1935,255,0,90,1980,True,0,"Arial",8,-2147483633,0)
+Gui.fImpMaintOrImport.lbl2.Parent("frameMap")
+Gui.fImpMaintOrImport.lbl2.FontStyle(True,False,False,False,False)
+Gui.fImpMaintOrImport.frameGenDet.Create(Frame)
+Gui.fImpMaintOrImport.frameGenDet.Size(6060,2565)
+Gui.fImpMaintOrImport.frameGenDet.Position(6225,780)
+Gui.fImpMaintOrImport.frameGenDet.Parent("frameMap")
+Gui.fImpMaintOrImport.frameGenDet.Caption("Fields required if you want to Generate Details Automatically")
+Gui.fImpMaintOrImport.frameGenDet.Enabled(False)
+Gui.fImpMaintOrImport.lbl7.Create(Label,"Quantity",True,1620,255,0,120,330,True,0,"Arial",8,-2147483633,0)
+Gui.fImpMaintOrImport.lbl7.Parent("frameGenDet")
+Gui.fImpMaintOrImport.ddlQtyHeader.Create(DropDownList)
+Gui.fImpMaintOrImport.ddlQtyHeader.Size(3975,330)
+Gui.fImpMaintOrImport.ddlQtyHeader.Position(1965,225)
+Gui.fImpMaintOrImport.ddlQtyHeader.Parent("frameGenDet")
+Gui.fImpMaintOrImport.lbl8.Create(Label,"Interval Days",True,1620,255,0,120,1080,True,0,"Arial",8,-2147483633,0)
+Gui.fImpMaintOrImport.lbl8.Parent("frameGenDet")
+Gui.fImpMaintOrImport.lbl9.Create(Label,"# of Buckets",True,1620,255,0,120,690,True,0,"Arial",8,-2147483633,0)
+Gui.fImpMaintOrImport.lbl9.Parent("frameGenDet")
+Gui.fImpMaintOrImport.lbl10.Create(Label,"Days to Consume",True,1620,255,0,120,1470,True,0,"Arial",8,-2147483633,0)
+Gui.fImpMaintOrImport.lbl10.Parent("frameGenDet")
+Gui.fImpMaintOrImport.cboBuckets.Create(ComboBox)
+Gui.fImpMaintOrImport.cboBuckets.Size(3975,330)
+Gui.fImpMaintOrImport.cboBuckets.Position(1965,600)
+Gui.fImpMaintOrImport.cboBuckets.Parent("frameGenDet")
+Gui.fImpMaintOrImport.cboIntDays.Create(ComboBox)
+Gui.fImpMaintOrImport.cboIntDays.Size(3975,330)
+Gui.fImpMaintOrImport.cboIntDays.Position(1965,975)
+Gui.fImpMaintOrImport.cboIntDays.Parent("frameGenDet")
+Gui.fImpMaintOrImport.cboDays2Consume.Create(ComboBox)
+Gui.fImpMaintOrImport.cboDays2Consume.Size(3975,330)
+Gui.fImpMaintOrImport.cboDays2Consume.Position(1965,1365)
+Gui.fImpMaintOrImport.cboDays2Consume.Parent("frameGenDet")
+Gui.fImpMaintOrImport.cbo3rdDays.Create(ComboBox)
+Gui.fImpMaintOrImport.cbo3rdDays.Size(3975,330)
+Gui.fImpMaintOrImport.cbo3rdDays.Position(1965,2145)
+Gui.fImpMaintOrImport.cbo3rdDays.Parent("frameGenDet")
+Gui.fImpMaintOrImport.cbo2ndDays.Create(ComboBox)
+Gui.fImpMaintOrImport.cbo2ndDays.Size(3975,330)
+Gui.fImpMaintOrImport.cbo2ndDays.Position(1965,1755)
+Gui.fImpMaintOrImport.cbo2ndDays.Parent("frameGenDet")
+Gui.fImpMaintOrImport.lbl14.Create(Label,"3rd Days",True,1620,255,0,120,2250,True,0,"Arial",8,-2147483633,0)
+Gui.fImpMaintOrImport.lbl14.Parent("frameGenDet")
+Gui.fImpMaintOrImport.lbl15.Create(Label,"2nd Days",True,1620,255,0,120,1860,True,0,"Arial",8,-2147483633,0)
+Gui.fImpMaintOrImport.lbl15.Parent("frameGenDet")
+Gui.fImpMaintOrImport.lbl3.Create(Label,"Part",True,1935,255,0,120,2295,True,0,"Arial",8,-2147483633,0)
+Gui.fImpMaintOrImport.lbl3.Parent("frameMap")
+Gui.fImpMaintOrImport.ddlPart.Create(DropDownList)
+Gui.fImpMaintOrImport.ddlPart.Size(3975,330)
+Gui.fImpMaintOrImport.ddlPart.Position(2100,2205)
+Gui.fImpMaintOrImport.ddlPart.Parent("frameMap")
+Gui.fImpMaintOrImport.chkUseCustomerXref.Create(CheckBox)
+Gui.fImpMaintOrImport.chkUseCustomerXref.Size(2970,300)
+Gui.fImpMaintOrImport.chkUseCustomerXref.Position(135,3705)
+Gui.fImpMaintOrImport.chkUseCustomerXref.Caption("Customer XREF parts in Import file")
+Gui.fImpMaintOrImport.chkUseCustomerXref.Parent("frameMap")
+Gui.fImpMaintOrImport.chkRev.Create(CheckBox)
+Gui.fImpMaintOrImport.chkRev.Size(3225,315)
+Gui.fImpMaintOrImport.chkRev.Position(120,2565)
+Gui.fImpMaintOrImport.chkRev.Parent("frameMap")
+Gui.fImpMaintOrImport.chkRev.Caption("Rev in seperate column")
+Gui.fImpMaintOrImport.chkRev.Event(Click,chkRev_Click)
+Gui.fImpMaintOrImport.lbl4.Create(Label,"Rev",True,1935,255,0,120,3015,True,0,"Arial",8,-2147483633,0)
+Gui.fImpMaintOrImport.lbl4.Parent("frameMap")
+Gui.fImpMaintOrImport.ddlRev.Create(DropDownList)
+Gui.fImpMaintOrImport.ddlRev.Size(3975,330)
+Gui.fImpMaintOrImport.ddlRev.Position(2115,2910)
+Gui.fImpMaintOrImport.ddlRev.Parent("frameMap")
+Gui.fImpMaintOrImport.ddlRev.Enabled(False)
+Gui.fImpMaintOrImport.frameMapLine.Create(Frame)
+Gui.fImpMaintOrImport.frameMapLine.Size(6060,870)
+Gui.fImpMaintOrImport.frameMapLine.Position(6195,3600)
+Gui.fImpMaintOrImport.frameMapLine.Parent("frameMap")
+Gui.fImpMaintOrImport.frameMapLine.Caption("Fields required if you want to Map Line details")
+Gui.fImpMaintOrImport.lbl6.Create(Label,"Quantity",True,1785,255,0,120,405,True,0,"Arial",8,-2147483633,0)
+Gui.fImpMaintOrImport.lbl6.Parent("frameMapLine")
+Gui.fImpMaintOrImport.ddlQtyLine.Create(DropDownList)
+Gui.fImpMaintOrImport.ddlQtyLine.Size(3975,330)
+Gui.fImpMaintOrImport.ddlQtyLine.Position(1965,315)
+Gui.fImpMaintOrImport.ddlQtyLine.Parent("frameMapLine")
+Gui.fImpMaintOrImport.ddl5.Create(DropDownList)
+Gui.fImpMaintOrImport.ddl5.Size(3975,330)
+Gui.fImpMaintOrImport.ddl5.Position(16095,2400)
+Gui.fImpMaintOrImport.ddl5.Parent("frameMap")
+Gui.fImpMaintOrImport.chkGenDet.Create(CheckBox)
+Gui.fImpMaintOrImport.chkGenDet.Size(2970,240)
+Gui.fImpMaintOrImport.chkGenDet.Position(6225,435)
+Gui.fImpMaintOrImport.chkGenDet.Parent("frameMap")
+Gui.fImpMaintOrImport.chkGenDet.Caption("Generate Line Detail record")
+Gui.fImpMaintOrImport.chkGenDet.Event(Click,chkGenDet_Click)
+Gui.fImpMaintOrImport.lbl11.Create(Label,"Order Date",True,1935,255,0,135,4155,True,0,"Arial",8,-2147483633,0)
+Gui.fImpMaintOrImport.lbl11.Parent("frameMap")
+Gui.fImpMaintOrImport.ddlOrderDate.Create(DropDownList)
+Gui.fImpMaintOrImport.ddlOrderDate.Size(3975,330)
+Gui.fImpMaintOrImport.ddlOrderDate.Position(2115,4065)
+Gui.fImpMaintOrImport.ddlOrderDate.Parent("frameMap")
+Gui.fImpMaintOrImport.cmdSave.Create(Button)
+Gui.fImpMaintOrImport.cmdSave.Size(1410,375)
+Gui.fImpMaintOrImport.cmdSave.Position(150,7200)
+Gui.fImpMaintOrImport.cmdSave.Caption("Save Config")
+Gui.fImpMaintOrImport.cmdSave.Event(Click,cmdSave_Click)
+Gui.fImpMaintOrImport.cmdImport.Create(Button)
+Gui.fImpMaintOrImport.cmdImport.Size(1410,375)
+Gui.fImpMaintOrImport.cmdImport.Position(150,7200)
+Gui.fImpMaintOrImport.cmdImport.Caption("Convert File")
+Gui.fImpMaintOrImport.cmdImport.Event(Click,cmdImport_Click)
+Gui.fImpMaintOrImport.lblXp.Create(Label,"Export Folder",True,1815,255,0,150,1845,True,0,"Arial",8,-2147483633,0)
+Gui.fImpMaintOrImport.txtXPFolder.Create(TextBox,"",True,3810,300,0,2190,1770,True,0,"Arial",8,-2147483643,1)
+Gui.fImpMaintOrImport.cmdXpFolder.Create(Button)
+Gui.fImpMaintOrImport.cmdXpFolder.Size(360,375)
+Gui.fImpMaintOrImport.cmdXpFolder.Position(6090,1725)
+Gui.fImpMaintOrImport.cmdXpFolder.Caption("^")
+Gui.fImpMaintOrImport.cmdXpFolder.Event(Click,cmdXpFolder_Click)
+Gui.fImpMaintOrImport.lblComment.Create(Label,"Comment",True,1815,255,0,6615,1005,True,0,"Arial",8,-2147483633,0)
+Gui.fImpMaintOrImport.lblUser2.Create(Label,"User 1 Field",True,1815,255,0,6615,255,True,0,"Arial",8,-2147483633,0)
+Gui.fImpMaintOrImport.txtUser1.Create(TextBox,"",True,3900,300,0,8655,165,True,0,"Arial",8,-2147483643,1)
+Gui.fImpMaintOrImport.txtUser1.MaxLength(30)
+Gui.fImpMaintOrImport.txtUser2.Create(TextBox,"",True,3900,300,0,8655,555,True,0,"Arial",8,-2147483643,1)
+Gui.fImpMaintOrImport.lblUser1.Create(Label,"User 2 field",True,1815,255,0,6615,645,True,0,"Arial",8,-2147483633,0)
+Gui.fImpMaintOrImport.txtComment.Create(TextboxM)
+Gui.fImpMaintOrImport.txtComment.Size(5955,840)
+Gui.fImpMaintOrImport.txtComment.Position(6615,1230)
+Gui.fImpMaintOrImport.txtComment.MaxLength(250)
+Gui.fImpMaintOrImport.lblImpFile.Create(Label,"Select Import File",True,1815,255,0,150,2250,True,0,"Arial",8,-2147483633,0)
+Gui.fImpMaintOrImport.txtImpFile.Create(TextBox,"",True,3810,300,0,2190,2160,True,0,"Arial",8,-2147483643,1)
+Gui.fImpMaintOrImport.txtImpFile.Locked(True)
+Gui.fImpMaintOrImport.cmdImpFileBrw.Create(Button)
+Gui.fImpMaintOrImport.cmdImpFileBrw.Size(360,375)
+Gui.fImpMaintOrImport.cmdImpFileBrw.Position(6090,2130)
+Gui.fImpMaintOrImport.cmdImpFileBrw.Caption("^")
+Gui.fImpMaintOrImport.cmdImpFileBrw.Event(Click,cmdImpFileBrw_Click)
+Gui.fImpMaintOrImport.lblXp3.Create(Label,"Location",True,1305,255,0,6615,2250,True,0,"Arial",8,-2147483633,0)
+Gui.fImpMaintOrImport.txtLocation.Create(TextBox,"",True,555,300,0,7950,2160,True,0,"Arial",8,-2147483643,1)
+Gui.fImpMaintOrImport.txtLocation.MaxLength(2)
+Gui.fImpMaintOrImport.cmdLocation.Create(Button)
+Gui.fImpMaintOrImport.cmdLocation.Size(360,375)
+Gui.fImpMaintOrImport.cmdLocation.Position(8625,2115)
+Gui.fImpMaintOrImport.cmdLocation.Caption("^")
+Gui.fImpMaintOrImport.cmdLocation.Event(Click,cmdLocation_Click)
+Program.Sub.ScreenSU.End
+
+Program.Sub.Preflight.Start
+v.Global.sXPFolder.Declare
+v.Global.sBckUpFolder.Declare
+v.Global.sFullFileName.Declare
+v.Global.sImpSource.Declare
+v.Global.sInvSource.Declare
+v.Global.sLineType.Declare
+Program.Sub.Preflight.End
+
+Program.Sub.Main.Start
+f.Intrinsic.Control.CallSub(DataLoad)
+'load as maintenance screen or export screen. its the same form. i'm just moving and hiding stuff
+f.Intrinsic.control.If(v.Caller.Switches,=,"")
+	f.Intrinsic.Control.CallSub(ImportScreen)
+f.Intrinsic.Control.ElseIf(v.Caller.Switches,=,"M")
+	f.Intrinsic.Control.CallSub(MaintScreen)
+f.Intrinsic.Control.EndIf
+
+Program.Sub.Main.End
+
+Program.Sub.DataLoad.Start
+v.Local.sSql.Declare
+v.Local.sDropDownList.Declare
+v.Local.sReturn.Declare
+v.Local.sPath.Declare
+
+v.Local.bExists.Declare
+v.Local.sList.Declare
+v.Local.iCount.Declare
+'this is where we get the configuration data
+f.Intrinsic.String.Build("Select * from GCG_5318_FORECAST WHERE PROFILE = '{0}'","DEFAULT",v.Local.sSql)
+
+f.Intrinsic.Control.Try
+	f.ODBC.Connection!conx.OpenCompanyConnection
+	f.Data.DataTable.CreateFromSQL("ConfDt","conx",v.Local.sSql,true)
+f.Intrinsic.Control.Catch
+	f.Intrinsic.UI.Msgbox("Oops! Something went wrong. Contact IT Support.")
+	f.ODBC.Connection!conx.Close
+	f.Intrinsic.Control.End
+f.Intrinsic.Control.Finally
+	f.ODBC.Connection!conx.Close
+f.Intrinsic.Control.EndTry
+
+'creating default folders for this project
+f.Intrinsic.string.Build("{0}\CUSTOM",v.Caller.GlobalDir,v.Local.sPath)
+f.Intrinsic.File.DirExists(v.Local.sPath,v.Local.bExists)
+f.Intrinsic.Control.If(v.local.bExists,=,false)
+	f.Intrinsic.File.CreateDir(v.Local.sPath)
+f.Intrinsic.Control.EndIf
+
+f.Intrinsic.string.Build("{0}\CUSTOM\5318",v.Caller.GlobalDir,v.Local.sPath)
+f.Intrinsic.File.DirExists(v.Local.sPath,v.Local.bExists)
+f.Intrinsic.Control.If(v.local.bExists,=,false)
+	f.Intrinsic.File.CreateDir(v.Local.sPath)
+f.Intrinsic.Control.EndIf
+
+v.Global.sXPFolder.Set(v.Local.sPath)
+
+
+f.Intrinsic.string.Build("{0}\CUSTOM\5318\BackUp",v.Caller.GlobalDir,v.Local.sPath)
+f.Intrinsic.File.DirExists(v.Local.sPath,v.Local.bExists)
+f.Intrinsic.Control.If(v.local.bExists,=,false)
+	f.Intrinsic.File.CreateDir(v.Local.sPath)
+f.Intrinsic.Control.EndIf
+
+v.Global.sBckUpFolder.Set(v.Local.sPath)
+	
+
+'manually creating dictionaries that will be loaded onto the drop downs
+'heres one for the source type that they can select
+f.Data.Dictionary.Create("InvSourceDict")
+f.Data.Dictionary.AddItem("InvSourceDict","P","PURCHASED")
+f.Data.Dictionary.AddItem("InvSourceDict","M","MANUFACTURED")
+f.Data.Dictionary.AddItem("InvSourceDict","","PULL SOURCE FROM INVENTORY")
+f.Data.dictionary.SetDefaultReturn("InvSourceDict","")
+GUI.fImpMaintOrImport.ddlInvSource.AddItems("Dictionary", "InvSourceDict")
+
+
+'heres one where they can select if it is an import or EDI. most often than not it is going to be import
+f.Data.Dictionary.Create("ImpSourceDict")
+f.Data.Dictionary.AddItem("ImpSourceDict","E","EDI")
+f.Data.Dictionary.AddItem("ImpSourceDict","I","IMPORT")
+f.Data.dictionary.SetDefaultReturn("ImpSourceDict","")
+GUI.fImpMaintOrImport.ddlImpSource.AddItems("Dictionary", "ImpSourceDict")
+
+'heres where they can select how they want to flag the forecasts
+f.Data.Dictionary.Create("LineTypeDict")
+f.Data.Dictionary.AddItem("LineTypeDict","0","FIRM")
+f.Data.Dictionary.AddItem("LineTypeDict","1","PLANNED")
+f.Data.Dictionary.AddItem("LineTypeDict","2","FORECAST")
+f.Data.dictionary.SetDefaultReturn("LineTypeDict","")
+GUI.fImpMaintOrImport.ddlLineType.AddItems("Dictionary", "LineTypeDict")
+
+
+
+'once i get the configuration i am now loading what is saved onto the screen.
+f.Intrinsic.Control.If(v.DataTable.ConfDt.RowCount,>,0)
+
+	'setting the default customer ID and name
+	gui.fImpMaintOrImport.txtCustID.Text(v.DataTable.ConfDt(0).customer!fieldvaltrim)
+	f.Intrinsic.Control.If(v.DataTable.ConfDt(0).customer!fieldvaltrim,<>,"")
+		f.Intrinsic.String.Build("Select NAME_CUSTOMER from V_CUSTOMER_MASTER where customer = '{0}'",v.DataTable.ConfDt(0).customer!fieldvaltrim,v.Local.sSql)
+		f.Intrinsic.Control.Try
+			f.ODBC.Connection!conx.OpenCompanyConnection
+			f.ODBC.Connection!conx.ExecuteAndReturn(v.Local.sSql,v.Local.sReturn)
+		f.Intrinsic.Control.Catch
+			f.Intrinsic.UI.Msgbox("Oops! Something went wrong. Contact IT Support.")
+		f.Intrinsic.Control.Finally
+			f.ODBC.Connection!conx.Close
+		f.Intrinsic.Control.EndTry
+		gui.fImpMaintOrImport.txtCustName.Text(v.Local.sReturn)		
+	f.Intrinsic.Control.EndIf
+	
+	'setting the drop down values
+	f.Intrinsic.Control.SelectCase(v.DataTable.ConfDt(0).INVENTORY_SOURCE!fieldValTrim)
+	f.Intrinsic.Control.Case("P")
+		gui.fImpMaintOrImport.ddlInvSource.Text("PURCHASED")
+	f.Intrinsic.Control.Case("M")
+		gui.fImpMaintOrImport.ddlInvSource.Text("MANUFACTURED")
+	f.Intrinsic.Control.Case("")
+		gui.fImpMaintOrImport.ddlInvSource.Text("PULL SOURCE FROM INVENTORY")
+	f.Intrinsic.Control.EndSelect
+	v.Global.sInvSource.Set(v.DataTable.ConfDt(0).INVENTORY_SOURCE!fieldValTrim)
+	
+	
+	f.Intrinsic.Control.SelectCase(v.DataTable.ConfDt(0).IMPORT_SOURCE!fieldValTrim)
+	f.Intrinsic.Control.Case("E")
+		gui.fImpMaintOrImport.ddlImpSource.Text("EDI")
+	f.Intrinsic.Control.Case("I")
+		gui.fImpMaintOrImport.ddlImpSource.Text("IMPORT")
+	f.Intrinsic.Control.EndSelect
+	v.Global.sImpSource.Set(v.DataTable.ConfDt(0).IMPORT_SOURCE!fieldValTrim)
+	
+	f.Intrinsic.Control.SelectCase(v.DataTable.ConfDt(0).LINE_TYPE!fieldValTrim)
+	f.Intrinsic.Control.Case("0")
+		gui.fImpMaintOrImport.ddlLineType.Text("FIRM")
+	f.Intrinsic.Control.Case("1")
+		gui.fImpMaintOrImport.ddlLineType.Text("PLANNED")
+	f.Intrinsic.Control.Case("2")
+		gui.fImpMaintOrImport.ddlLineType.Text("FORECAST")
+	f.Intrinsic.Control.EndSelect
+	v.Global.sLineType.Set(v.DataTable.ConfDt(0).LINE_TYPE!fieldValTrim)
+	
+	'setting the import path
+	v.Local.sPath.Set(v.DataTable.ConfDt(0).XP_FOLDER!fieldValTrim)
+	f.Intrinsic.File.DirExists(v.Local.sPath,v.Local.bExists)
+	f.Intrinsic.Control.If(v.local.bExists,=,false)
+		f.Intrinsic.File.CreateDir(v.Local.sPath)
+	f.Intrinsic.Control.EndIf
+	v.Global.sXPFolder.Set(v.Local.sPath)
+	gui.fImpMaintOrImport.txtXPFolder.Text(v.Local.sPath)
+	
+	'creating and storing the backup path for use in the export
+	f.Intrinsic.string.Build("{0}\BackUp",v.Local.sPath,v.Local.sPath)
+	f.Intrinsic.Control.If(v.local.bExists,=,false)
+		f.Intrinsic.File.CreateDir(v.Local.sPath)	
+	f.Intrinsic.Control.EndIf
+	v.Global.sBckUpFolder.Set(v.Local.sPath)
+	
+	'setting the user1, user2,location and comment fields
+	gui.fImpMaintOrImport.txtUser1.Text(v.DataTable.ConfDt(0).USER_1!fieldValTrim)
+	gui.fImpMaintOrImport.txtUser2.Text(v.DataTable.ConfDt(0).USER_2!fieldValTrim)
+	gui.fImpMaintOrImport.txtComment.Text(v.DataTable.ConfDt(0).COMMENT!fieldValTrim)
+	gui.fImpMaintOrImport.txtLocation.Text(v.DataTable.ConfDt(0).LOCATION!fieldValTrim)
+	
+	gui.fImpMaintOrImport.txtImpHeader.Text(v.DataTable.ConfDt(0).IMPORT_HEADER!fieldValTrim)
+	'this is where we are first getting the header fields as a string  of the file that the customer gives and then populating them the dropdowsn so they can map it to global shop required fields
+	f.Intrinsic.Control.If(v.DataTable.ConfDt(0).IMPORT_HEADER!fieldValTrim,<>,"")
+		f.Intrinsic.String.Replace(v.DataTable.ConfDt(0).IMPORT_HEADER!fieldValTrim," ","",v.Local.sList)
+		f.Intrinsic.String.Replace(v.DataTable.ConfDt(0).IMPORT_HEADER!fieldValTrim,v.Ambient.NewLine,"",v.Local.sList)
+		f.Intrinsic.Control.If(v.DataTable.ImpHeadDT.Exists)
+			f.Data.DataTable.Close("ImpHeadDT")
+		f.Intrinsic.Control.EndIf
+		f.Data.DataTable.CreateFromString("ImpHeadDT",v.DataTable.ConfDt(0).IMPORT_HEADER!fieldValTrim,"LIST","string",v.Ambient.Null,",",true)
+
+		gui.fImpMaintOrImport.ddlPart.additems("Datatable","ImpHeadDT","LIST","LIST")
+		gui.fImpMaintOrImport.ddlRev.additems("Datatable","ImpHeadDT","LIST","LIST")
+		gui.fImpMaintOrImport.ddlOrderDate.additems("Datatable","ImpHeadDT","LIST","LIST")
+		gui.fImpMaintOrImport.ddlQtyHeader.additems("Datatable","ImpHeadDT","LIST","LIST")
+		gui.fImpMaintOrImport.ddlQtyLine.additems("Datatable","ImpHeadDT","LIST","LIST")
+		gui.fImpMaintOrImport.cboIntDays.additems("Datatable","ImpHeadDT","LIST","LIST")
+		gui.fImpMaintOrImport.cboDays2Consume.additems("Datatable","ImpHeadDT","LIST","LIST")
+		gui.fImpMaintOrImport.cboBuckets.additems("Datatable","ImpHeadDT","LIST","LIST")
+		gui.fImpMaintOrImport.cbo2ndDays.additems("Datatable","ImpHeadDT","LIST","LIST")
+		gui.fImpMaintOrImport.cbo3rdDays.additems("Datatable","ImpHeadDT","LIST","LIST")
+		'based on what is saved in the configuration table we are assigning the mapping that are saved
+		
+		gui.fImpMaintOrImport.ddlPart.Text(v.DataTable.ConfDt(0).part!fieldValTrim)
+		'handles revs in seperate column in the file which needs a seperate mapping for it based on whats been saved
+		f.Intrinsic.Control.If(v.DataTable.ConfDt(0).Seperate_rev!fieldVal)
+			gui.fImpMaintOrImport.chkRev.Value(1)
+			gui.fImpMaintOrImport.ddlRev.Text(v.DataTable.ConfDt(0).Rev!fieldValTrim)
+			gui.fImpMaintOrImport.ddlRev.Enabled(True)
+		f.Intrinsic.Control.Else
+			gui.fImpMaintOrImport.chkRev.Value(0)
+			gui.fImpMaintOrImport.ddlRev.Enabled(false)
+		f.Intrinsic.Control.EndIf
+		
+		'check if they are using xref or no so we can map and get info accordingly.
+		f.Intrinsic.Control.If(v.DataTable.ConfDt(0).cust_xref!fieldVal)
+			gui.fImpMaintOrImport.chkUseCustomerXref.Value(1)
+		f.Intrinsic.Control.Else
+			gui.fImpMaintOrImport.chkUseCustomerXref.Value(0)
+		f.Intrinsic.Control.EndIf
+		
+		
+		'load the order date mapping
+		gui.fImpMaintOrImport.ddlOrderDate.Text(v.DataTable.ConfDt(0).Order_date!fieldValTrim)
+		'based on whether to gen detail or no, map the corresponding fields
+		f.Intrinsic.Control.If(v.DataTable.ConfDt(0).gen_detail!fieldVal)
+			gui.fImpMaintOrImport.chkGenDet.Value(1)
+			gui.fImpMaintOrImport.frameGenDet.Enabled(True)
+			gui.fImpMaintOrImport.frameMapLine.Enabled(False)
+			gui.fImpMaintOrImport.ddlQtyHeader.Text(v.DataTable.ConfDt(0).quantity!fieldValTrim)
+			gui.fImpMaintOrImport.cboBuckets.Text(v.DataTable.ConfDt(0).No_buckets!fieldValTrim)
+			gui.fImpMaintOrImport.cboIntDays.Text(v.DataTable.ConfDt(0).Interval_days!fieldValTrim)
+			gui.fImpMaintOrImport.cboDays2Consume.Text(v.DataTable.ConfDt(0).Days_consume!fieldValTrim)
+			gui.fImpMaintOrImport.cbo3rdDays.Text(v.DataTable.ConfDt(0).thd_days!fieldValTrim)
+			gui.fImpMaintOrImport.cbo2ndDays.Text(v.DataTable.ConfDt(0).sec_days!fieldValTrim)
+		f.Intrinsic.Control.Else
+			gui.fImpMaintOrImport.chkGenDet.Value(0)
+			gui.fImpMaintOrImport.frameGenDet.Enabled(False)
+			gui.fImpMaintOrImport.frameMapLine.Enabled(True)
+			gui.fImpMaintOrImport.ddlQtyLine.Text(v.DataTable.ConfDt(0).quantity!fieldValTrim)
+		f.Intrinsic.Control.EndIf
+	f.Intrinsic.Control.EndIf
+	
+f.Intrinsic.Control.EndIf
+
+
+
+Program.Sub.DataLoad.End
+
+Program.Sub.chkGenerateDetails_Click.Start
+f.Intrinsic.Control.If(v.Screen.fImpMaintOrImport!chkGenDet.checkedasboolean)
+	gui.fImpMaintOrImport.frameGenDet.Enabled(true)
+	gui.fImpMaintOrImport.frameMapLine.Enabled(False)
+f.Intrinsic.Control.Else
+	gui.fImpMaintOrImport.frameGenDet.Enabled(False)
+	gui.fImpMaintOrImport.frameMapLine.Enabled(True)
+f.Intrinsic.Control.EndIf
+
+Program.Sub.chkGenerateDetails_Click.End
+
+Program.Sub.cmdBrwCust_Click.Start
+v.Local.sSql.Declare
+v.local.sTitles.Declare
+v.Local.iWidths.Declare
+v.Local.sRet.Declare
+v.Local.sDisp.Declare
+
+'create browser
+v.Local.sSql.Set("select customer,Name_customer from V_CUSTOMER_MASTER")
+F.Intrinsic.String.Split("Customer ID*!*Customer Name","*!*",V.Local.sTitles)
+F.Intrinsic.String.Split("300*!*600","*!*",V.Local.iWidths)
+F.Intrinsic.UI.SetBrowserHotTypeAhead(True)
+
+f.Intrinsic.Control.Try
+	f.ODBC.Connection!conx.OpenCompanyConnection
+	f.Intrinsic.UI.Browser("Select Customer","Conx",V.Local.sSql,V.Local.sTitles,V.Local.iWidths,V.Local.sRet)
+f.Intrinsic.Control.Catch
+	f.Intrinsic.UI.Msgbox("Oops! Something went wrong. Contact IT Support.")
+f.Intrinsic.Control.Finally
+	f.ODBC.Connection!conx.Close
+f.Intrinsic.Control.EndTry
+
+
+'handle return
+F.Intrinsic.Control.If(V.Local.sRet,=,"***CANCEL***")
+	f.Intrinsic.Control.ExitSub
+f.Intrinsic.Control.else
+	f.Intrinsic.String.Split(v.Local.sRet,"*!*",v.local.sRet)
+	gui.fImpMaintOrImport.txtCustID.Text(v.Local.sRet(0))
+	gui.fImpMaintOrImport.txtCustName.Text(v.Local.sRet(1))
+f.Intrinsic.Control.EndIf
+Program.Sub.cmdBrwCust_Click.End
+
+Program.Sub.cmdImportHeaderList_Click.Start
+v.Local.sList.Declare
+v.Local.iCount.Declare
+v.Local.sList.Set(v.Screen.fImpMaintOrImport!txtImpHeader.text)
+
+'this is where we load the header list into the drop downs
+f.Intrinsic.Control.if(v.Local.sList.Trim,<>,"")
+	f.Intrinsic.String.Replace(v.Local.sList," ","",v.Local.sList)
+	f.Intrinsic.String.Replace(v.Local.sList,v.Ambient.NewLine,"",v.Local.sList)
+	f.Intrinsic.Control.If(v.DataTable.ImpHeadDT.Exists)
+		f.Data.DataTable.Close("ImpHeadDT")
+	f.Intrinsic.Control.EndIf
+
+	f.Data.DataTable.CreateFromString("ImpHeadDT",v.Local.sList.trim,"LIST","string",v.Ambient.Null,",",true)
+	
+	gui.fImpMaintOrImport.ddlPart.ClearItems
+	gui.fImpMaintOrImport.ddlRev.ClearItems
+	gui.fImpMaintOrImport.ddlOrderDate.ClearItems
+	gui.fImpMaintOrImport.ddlQtyHeader.ClearItems
+	gui.fImpMaintOrImport.ddlQtyLine.ClearItems
+	gui.fImpMaintOrImport.cboIntDays.ClearItems
+	gui.fImpMaintOrImport.cboDays2Consume.ClearItems
+	gui.fImpMaintOrImport.cboBuckets.ClearItems
+	gui.fImpMaintOrImport.cbo2ndDays.ClearItems
+	gui.fImpMaintOrImport.cbo3rdDays.ClearItems
+
+	
+	gui.fImpMaintOrImport.ddlPart.additems("Datatable","ImpHeadDT","LIST","LIST")
+	gui.fImpMaintOrImport.ddlRev.additems("Datatable","ImpHeadDT","LIST","LIST")
+	gui.fImpMaintOrImport.ddlOrderDate.additems("Datatable","ImpHeadDT","LIST","LIST")
+	gui.fImpMaintOrImport.ddlQtyHeader.additems("Datatable","ImpHeadDT","LIST","LIST")
+	gui.fImpMaintOrImport.ddlQtyLine.additems("Datatable","ImpHeadDT","LIST","LIST")
+	gui.fImpMaintOrImport.cboIntDays.additems("Datatable","ImpHeadDT","LIST","LIST")
+	gui.fImpMaintOrImport.cboDays2Consume.additems("Datatable","ImpHeadDT","LIST","LIST")
+	gui.fImpMaintOrImport.cboBuckets.additems("Datatable","ImpHeadDT","LIST","LIST")
+	gui.fImpMaintOrImport.cbo2ndDays.additems("Datatable","ImpHeadDT","LIST","LIST")
+	gui.fImpMaintOrImport.cbo3rdDays.additems("Datatable","ImpHeadDT","LIST","LIST")
+f.Intrinsic.Control.EndIf
+Program.Sub.cmdImportHeaderList_Click.End
+
+Program.Sub.ImportScreen.Start
+'hide and move stuff if it is opened in the import mode
+gui.fImpMaintOrImport.cmdSave.Visible(false)
+gui.fImpMaintOrImport.cmdImport.Visible(true)
+gui.fImpMaintOrImport.txtImpFile.Visible(true)
+gui.fImpMaintOrImport.lblImpFile.Visible(true)
+gui.fImpMaintOrImport.cmdImpFileBrw.Visible(true)
+gui.fImpMaintOrImport.frameMap.Visible(false)
+gui.fImpMaintOrImport.cmdImport.Position(150,2600)
+gui.fImpMaintOrImport..Caption("Forecast File Conversion Tool")
+
+Gui.fImpMaintOrImport..Size(12855,3450)
+gui.fImpMaintOrImport..Show
+Program.Sub.ImportScreen.End
+
+Program.Sub.MaintScreen.Start
+'hide and move stuff if it is maint mode
+gui.fImpMaintOrImport.cmdSave.Visible(True)
+gui.fImpMaintOrImport.cmdImport.Visible(false)
+gui.fImpMaintOrImport.txtImpFile.Visible(false)
+gui.fImpMaintOrImport.lblImpFile.Visible(false)
+gui.fImpMaintOrImport.cmdImpFileBrw.Visible(false)
+gui.fImpMaintOrImport.frameMap.Visible(true)
+gui.fImpMaintOrImport.cmdImport.Position(150,7200)
+gui.fImpMaintOrImport..Caption("Forecast File Conversion Maintenance")
+Gui.fImpMaintOrImport..Size(12855,8235)
+gui.fImpMaintOrImport..Show
+Program.Sub.MaintScreen.End
+
+Program.Sub.fImpMaintOrImport_UnLoad.Start
+f.Intrinsic.Control.End
+Program.Sub.fImpMaintOrImport_UnLoad.End
+
+Program.Sub.chkGenDet_Click.Start
+'enable and disable stuff based on the gen details check box
+f.Intrinsic.Control.If(v.Screen.fImpMaintOrImport!chkGenDet.checkedasboolean)
+	gui.fImpMaintOrImport.frameGenDet.Enabled(true)
+	gui.fImpMaintOrImport.frameMapLine.Enabled(False)
+f.Intrinsic.Control.Else
+	gui.fImpMaintOrImport.frameGenDet.Enabled(False)
+	gui.fImpMaintOrImport.frameMapLine.Enabled(True)
+f.Intrinsic.Control.EndIf
+Program.Sub.chkGenDet_Click.End
+
+Program.Sub.chkRev_Click.Start
+'enable and disable stuff based on the Rev check box
+f.Intrinsic.Control.If(v.Screen.fImpMaintOrImport!chkRev.checkedasboolean)
+	gui.fImpMaintOrImport.ddlRev.Enabled(true)
+f.Intrinsic.Control.Else
+	gui.fImpMaintOrImport.ddlRev.Enabled(False)
+f.Intrinsic.Control.EndIf
+Program.Sub.chkRev_Click.End
+
+Program.Sub.cmdXpFolder_Click.Start
+v.local.sFolder.Declare
+v.Local.sXPPath.Declare
+'browser to select XP path
+v.Local.sXPPath.Set(v.Screen.fImpMaintOrImport!txtXPFolder.text.trim)
+f.Intrinsic.UI.FolderBrowser("Select a Destination Folder",v.Local.sFolder)
+f.Intrinsic.Control.If(v.Local.sFolder,<>,"***CANCEL***")
+	gui.fImpMaintOrImport.txtXPFolder.Text(v.Local.sFolder)
+	v.Global.sXPFolder.Set(v.Local.sFolder)
+f.Intrinsic.Control.Else	
+	gui.fImpMaintOrImport.txtXPFolder.Text(v.Local.sXPPath)
+f.Intrinsic.Control.EndIf
+Program.Sub.cmdXpFolder_Click.End
+
+Program.Sub.cmdImpFileBrw_Click.Start
+v.local.sFileSelect.Declare
+v.Local.sFile.Declare
+'Browser to select file to import
+v.Local.sFile.Set(v.Screen.fImpMaintOrImport!txtImpFile.text.trim)
+f.Intrinsic.UI.ShowOpenFileDialog("","*.*",v.Global.sXPFolder,v.Local.sFileSelect)
+f.Intrinsic.Control.If(v.Local.sFileSelect,<>,"***CANCEL***")
+	gui.fImpMaintOrImport.txtImpFile.Text(v.Local.sFileSelect)
+	v.Global.sFullFileName.Set(v.Local.sFileSelect)
+f.Intrinsic.Control.Else	
+	gui.fImpMaintOrImport.txtImpFile.Text(v.Local.sFile)
+	v.Global.sFullFileName.Set(v.Local.sFile)
+f.Intrinsic.Control.EndIf
+Program.Sub.cmdImpFileBrw_Click.End
+
+Program.Sub.cmdImport_Click.Start
+v.Local.sRet.Declare
+v.Local.bCSV.Declare
+v.Local.bXL.Declare
+V.Local.sFileType.Declare
+v.Local.iCount.Declare
+v.Local.iHold.Declare
+v.Local.iRet.Declare
+v.Local.sConvFile.Declare
+v.Local.sFieldList.Declare
+v.Local.sFieldListSplit.Declare
+v.Local.sDataTypeString.Declare
+v.Local.sGenFile.Declare
+v.Local.sExpression.Declare
+v.Local.sSql.Declare
+v.Local.bGenFile.Declare
+v.Local.bCustXref.Declare
+v.Local.bSeperateRev.Declare
+v.Local.sCustomer.Declare
+v.Local.sLocation.Declare
+v.Local.sPath.Declare
+v.Local.sUser1.Declare
+v.Local.sUser2.Declare
+v.Local.sComment.Declare
+v.Local.sImpHeader.Declare
+v.Local.sPart.Declare
+v.local.sRev.Declare
+v.Local.sOrderDate.Declare
+v.Local.sDateFormat.Declare
+v.Local.sQty.Declare
+v.Local.sBuckets.Declare
+v.Local.sIntervalDays.Declare
+v.Local.sDaysConsume.Declare
+v.Local.sSecDays.Declare
+v.Local.sThdDays.Declare
+v.Local.bExists.Declare
+v.Local.sGenDetail.Declare
+v.Local.sfilter.Declare
+v.Local.sOutLine.Declare
+v.Local.dOrdDate.Declare
+v.Local.sDstamp.Declare
+v.Local.sTStamp.Declare
+
+v.Local.sMsg.Declare
+
+v.Local.sOutHead.Declare
+v.Local.sOutData.Declare
+v.Local.sOutFile.Declare
+
+' here is where it all comes together
+' i am initially preloading the conf settings onto local variables this drives what goes into the converted file and how it goes in and how the conversion happens
+
+v.Local.sCustomer.Set(v.Screen.fImpMaintOrImport!txtCustID.text)
+v.Local.sUser1.Set(v.Screen.fImpMaintOrImport!txtUser1.text)
+v.Local.sUser2.Set(v.Screen.fImpMaintOrImport!txtUser2.text)
+v.Local.sComment.Set(v.Screen.fImpMaintOrImport!txtComment.text)
+v.Local.sLocation.Set(v.Screen.fImpMaintOrImport!txtLocation.text)
+v.Local.sImpHeader.Set(v.Screen.fImpMaintOrImport!txtImpHeader.text)
+v.Local.sPart.Set(v.Screen.fImpMaintOrImport!ddlPart.text)
+v.Local.sRev.Set(v.Screen.fImpMaintOrImport!ddlRev.text)
+v.Local.sOrderDate.Set(v.Screen.fImpMaintOrImport!ddlOrderDate.text)
+v.Local.bGenFile.Set(v.Screen.fImpMaintOrImport!chkGenDet.checkedasboolean)
+v.Local.bSeperateRev.Set(v.Screen.fImpMaintOrImport!chkRev.checkedasboolean)
+v.Local.bCustXref.Set(v.Screen.fImpMaintOrImport!chkUseCustomerXref.checkedasboolean)
+f.Intrinsic.Control.If(v.Local.bGenFile)
+	v.Local.sQty.set(v.Screen.fImpMaintOrImport!ddlQtyHeader.text)
+f.Intrinsic.Control.Else
+	v.Local.sQty.set(v.Screen.fImpMaintOrImport!ddlQtyLine.text)
+f.Intrinsic.Control.EndIf
+
+v.Local.sBuckets.set(v.Screen.fImpMaintOrImport!cboBuckets.text)
+v.Local.sIntervalDays.set(v.Screen.fImpMaintOrImport!cboIntDays.text)
+v.Local.sDaysConsume.set(v.Screen.fImpMaintOrImport!cboDays2Consume.text)
+v.Local.sSecDays.set(v.Screen.fImpMaintOrImport!cbo2ndDays.text)
+v.Local.sThdDays.set(v.Screen.fImpMaintOrImport!cbo3rdDays.text)
+
+gui.fImpMaintOrImport..Enabled(false)
+
+f.Intrinsic.UI.InvokeWaitDialog("Converting Forecast File")
+
+F.Intrinsic.String.Split(v.Global.sFullFileName,".",V.Local.sFileType)
+'checking if this stuff is in there before we do anything. they will need to set it up in the maint mode before they can do anything
+f.Intrinsic.Control.If(v.Local.sCustomer.Trim,=,"","OR",v.Global.sXPFolder.Trim,=,"",v.Global.sImpSource.Trim,=,"",v.Local.sImpHeader.Trim,=,"",v.Global.sFullFileName.Trim,=,"")
+	f.Intrinsic.UI.Msgbox("You need to select a customer, an export folder, an import source, an inventory source, a file and have the import header list in the maintenance in order to convert a file")
+	gui.fImpMaintOrImport..Enabled(True)
+	f.Intrinsic.UI.CloseWaitDialog
+	f.Intrinsic.Control.ExitSub
+f.Intrinsic.Control.EndIf
+'i'm getting the import file header list so we can create the structure of the datatable
+v.Local.sFieldList.Set(v.DataTable.ConfDt(0).Import_Header!fieldValTrim)
+
+f.Intrinsic.String.Replace(v.Local.sFieldList,v.Ambient.NewLine,"",v.Local.sFieldList)
+f.Intrinsic.String.Replace(v.Local.sFieldList,",","*!*",v.Local.sFieldList)
+f.Intrinsic.String.Split(v.Local.sFieldList.trim,"*!*",v.Local.sFieldListSplit)
+
+
+'Buidling datatype parameter string for creation of datatable based on the number of header fields
+f.Intrinsic.Control.For(v.Local.iCount,0,v.Local.sFieldListSplit.UBound,1)
+	f.Intrinsic.Control.If(v.Local.iCount,=,0)
+		v.Local.sDataTypeString.Set("String")
+	f.Intrinsic.Control.Else
+		f.Intrinsic.String.Build("{0}*!*String",v.Local.sDataTypeString,v.Local.sDataTypeString)
+	f.Intrinsic.Control.EndIf
+f.Intrinsic.Control.Next(v.Local.iCount)
+
+'check to see if it is a CSV or an excel file and brings it in accordingly
+
+
+'some people have . in the file name which is causing issues.
+'f.Intrinsic.Control.If(v.Local.sFileType(1).UCase,=,"XLS","OR",v.Local.sFileType(1).UCase,=,"XLSX")
+'	F.Automation.MSExcel.ReadSpreadsheet(V.Global.sFullFileName, V.Local.sRet)
+'	f.Intrinsic.String.Split(V.Local.sRet,"&^&",v.Local.sRet)
+'	v.Local.sRet.RedimPreserve(0,0)
+'	F.Data.DataTable.CreateFromString("ConvDt", V.Local.sRet, V.Local.sFieldList , V.Local.sDataTypeString,"*!*","$!$", TRUE)
+'f.Intrinsic.Control.ElseIf(v.Local.sFileType(1).UCase,=,"CSV")
+'	f.Intrinsic.file.File2String(v.Global.sFullFileName,v.Local.sRet)
+'	F.Data.DataTable.CreateFromString("ConvDt", V.Local.sRet, V.Local.sFieldList , V.Local.sDataTypeString,",",v.Ambient.NewLine, TRUE)
+'f.Intrinsic.Control.EndIf
+v.Local.bXL.Set(false)
+v.Local.bCSV.Set(false)
+
+
+f.Intrinsic.String.IsInString(v.Global.sFullFileName,"XLS",true,v.Local.bXL)
+f.Intrinsic.String.IsInString(v.Global.sFullFileName,"CSV",true,v.Local.bCSV)
+f.Intrinsic.Control.If(v.Local.bXL)
+	F.Automation.MSExcel.ReadSpreadsheet(V.Global.sFullFileName, V.Local.sRet)
+	f.Intrinsic.String.Split(V.Local.sRet,"&^&",v.Local.sRet)
+	v.Local.sRet.RedimPreserve(0,0)
+	F.Data.DataTable.CreateFromString("ConvDt", V.Local.sRet, V.Local.sFieldList , V.Local.sDataTypeString,"*!*","$!$", TRUE)	
+f.Intrinsic.Control.ElseIf(v.Local.bCSV)
+	f.Intrinsic.file.File2String(v.Global.sFullFileName,v.Local.sRet)
+	F.Data.DataTable.CreateFromString("ConvDt", V.Local.sRet, V.Local.sFieldList , V.Local.sDataTypeString,",",v.Ambient.NewLine, TRUE)
+f.Intrinsic.Control.Else
+	f.Intrinsic.UI.Msgbox("Unable to identify FileType. Please check if file is an excel or csv file.")
+	f.Intrinsic.Control.CallSub(fImpMaintOrImport_UnLoad)
+f.Intrinsic.Control.EndIf
+
+
+
+f.Data.DataTable.DeleteRow("ConvDt",0)
+
+'Adding Header and line columns. and the customer information
+f.Data.Datatable.AddColumn("ConvDt","Header_GSS","String","H")
+f.Data.Datatable.AddColumn("ConvDt","Line_GSS","String","L")
+f.Data.DataTable.AddColumn("ConvDt","Cust_GSS","String",v.Local.sCustomer.Trim)
+f.Data.DataTable.AddColumn("ConvDt","ShipTo_GSS","String","")
+'I am creating expression columns based on the mappings that are saved. thats extarapolate the data that i need from the export file into the columns that i require 
+f.Intrinsic.Control.If(v.Local.bCustXref)
+	f.Intrinsic.String.Build("TRIM([{0}])",v.Local.sPart,v.Local.sExpression)
+	f.Data.DataTable.AddExpressionColumn("ConvDt","Cust_Part_GSS","String",v.Local.sExpression)
+	f.Intrinsic.String.Build("select Customer_part,part from V_INV_CROSS_REF where customer = '{0}' ",v.Local.sCustomer,v.Local.sSql)
+	f.Intrinsic.Control.Try
+	f.ODBC.Connection!conx.OpenCompanyConnection
+		f.Data.dictionary.CreateFromSQL("CUstPartDict","conx",v.Local.sSql)
+	f.Intrinsic.Control.Catch
+		f.Intrinsic.UI.Msgbox("Oops! Something went wrong. Contact IT Support.")
+	f.Intrinsic.Control.Finally
+		f.ODBC.Connection!conx.Close
+	f.Intrinsic.Control.EndTry
+	f.Data.DataTable.AddColumn("ConvDt","PartRev_GSS","String")
+	f.Data.DataTable.FillFromDictionary("ConvDt","CUstPartDict","Cust_Part_GSS","PartRev_GSS")
+	f.Data.Dictionary.Close("CUstPartDict")
+	
+	f.Data.DataTable.AddExpressionColumn("ConvDt","Part_GSS","String","SUBSTRING([PartRev_GSS] + '                    ',1,17)")
+	
+	f.Data.DataTable.AddExpressionColumn("ConvDt","Rev_GSS","String","SUBSTRING([PartRev_GSS] + '                    ',18,3)")
+f.Intrinsic.Control.Else
+	f.Intrinsic.Control.If(v.Local.bSeperateRev)
+	
+		f.Intrinsic.String.Build("SUBSTRING([{0}] + '                    ',1,17)",v.Local.sPart,v.Local.sExpression)
+		f.Data.DataTable.AddExpressionColumn("ConvDt","Part_GSS","String",v.Local.sExpression)
+		f.Intrinsic.String.Build("SUBSTRING([{0}] + '                    ',1,3)",v.Local.sRev,v.Local.sExpression)
+		f.Data.DataTable.AddExpressionColumn("ConvDt","Rev_GSS","String",v.Local.sExpression)
+		f.Intrinsic.String.Build("TRIM([{0}]) + TRIM([{1}])",v.Local.sPart,v.Local.sRev,v.Local.sExpression)
+		f.Data.DataTable.AddExpressionColumn("ConvDt","PartRev_GSS","String",v.Local.sExpression)
+	f.Intrinsic.Control.Else
+		f.Intrinsic.String.Build("SUBSTRING([{0}] + '                    ',1,17)",v.Local.sPart,v.Local.sExpression)
+		f.Data.DataTable.AddExpressionColumn("ConvDt","Part_GSS","String",v.Local.sExpression)
+		f.Intrinsic.String.Build("SUBSTRING([{0}] + '                    ',18,3)",v.Local.sPart,v.Local.sExpression)
+		f.Data.DataTable.AddExpressionColumn("ConvDt","Rev_GSS","String",v.Local.sExpression)
+		f.Intrinsic.String.Build("TRIM([{0}])",v.Local.sPart,v.Local.sExpression)
+		f.Data.DataTable.AddExpressionColumn("ConvDt","PartRev_GSS","String",v.Local.sExpression)
+	f.Intrinsic.Control.EndIf	
+	f.Intrinsic.String.Build("select part,Customer_part from V_INV_CROSS_REF where customer = '{0}' ",v.Local.sCustomer,v.Local.sSql)
+	f.Intrinsic.Control.Try
+	f.ODBC.Connection!conx.OpenCompanyConnection
+		f.Data.dictionary.CreateFromSQL("PartCustDict","conx",v.Local.sSql)
+	f.Intrinsic.Control.Catch
+		f.Intrinsic.UI.Msgbox("Oops! Something went wrong. Contact IT Support.")
+	f.Intrinsic.Control.Finally
+		f.ODBC.Connection!conx.Close
+	f.Intrinsic.Control.EndTry
+	f.Data.Dictionary.SetDefaultReturn("PartCustDict","")
+	f.Data.DataTable.AddColumn("ConvDt","Cust_Part_GSS","String")
+	f.Data.DataTable.FillFromDictionary("ConvDt","PartCustDict","PartRev_GSS","Cust_Part_GSS")
+	f.Data.Dictionary.Close("PartCustDict")
+f.Intrinsic.Control.EndIf
+f.Data.Datatable.AddColumn("ConvDt","Location_GSS","String",v.Local.sLocation)
+f.Data.Datatable.AddColumn("ConvDt","Desc_GSS","String","")
+'f.Intrinsic.String.Build("TRIM([{0}])",v.Local.sOrderDate,v.Local.sExpression)
+'f.Data.DataTable.AddExpressionColumn("ConvDt","Order_dates","String",v.Local.sExpression)
+
+f.Intrinsic.String.Build("TRIM([{0}])",v.Local.sOrderDate,v.Local.sExpression)
+f.Data.DataTable.AddExpressionColumn("ConvDt","Ord_date_GSS","Date",v.Local.sExpression)
+
+f.Data.DataTable.AddColumn("ConvDt","Order_dates_GSS","String")
+f.Intrinsic.Control.For(v.Local.iCount,0,v.DataTable.ConvDt.RowCount--,1)
+	f.Intrinsic.String.Replace(v.DataTable.ConvDt(v.Local.iCount).Ord_date_GSS!fieldValtrim," 12:00:00 AM","",v.Local.sDateFormat)
+
+	
+'	v.Local.dOrdDate.Set(v.Local.sDateFormat)
+	f.Intrinsic.String.Format(v.Local.sDateFormat,"MM/DD/YYYY",v.Local.sDateFormat)
+	f.Data.DataTable.SetValue("ConvDt",v.Local.iCount,"Order_dates_GSS",v.Local.sDateFormat)
+f.Intrinsic.Control.Next(v.Local.iCount)
+
+'f.Data.DataTable.AddColumn("ConvDt","Ord_date","Date")
+'f.Intrinsic.Control.For(v.Local.iCount,0,v.DataTable.ConvDt.RowCount--,1)
+'	v.Local.dOrdDate.Set(v.DataTable.ConvDt(v.Local.iCount).Order_dates!fieldValTrim)
+'	f.Data.DataTable.SetValue("ConvDt",v.Local.iCount,"ord_date",v.Local.dOrdDate)
+'f.Intrinsic.Control.Next(v.Local.iCount)
+
+
+
+
+f.Data.Datatable.AddColumn("ConvDt","INV_Source_GSS","String",v.Global.sInvSource.Trim)
+
+f.Data.Datatable.AddColumn("ConvDt","DOC_NO_GSS","String")
+
+
+f.Intrinsic.String.Build("CONVERT([{0}],'System.Double')",v.Local.sQty,v.Local.sExpression)
+f.Data.DataTable.AddExpressionColumn("ConvDt","Qty_GSS","float",v.Local.sExpression)
+
+f.Intrinsic.Control.if(v.Local.bGenFile)
+	v.Local.sGenFile.Set("Y")
+	f.Data.Datatable.AddColumn("ConvDt","GEN_DET_GSS","String",v.Local.sGenDetail)
+	f.Intrinsic.Control.If(v.Local.sBuckets.IsNumeric)
+		f.Data.Datatable.AddColumn("ConvDt","Buckets_GSS","long",v.Local.sBuckets.Long)
+	f.Intrinsic.Control.Else
+		f.Intrinsic.String.Build("CONVERT({0},'System.Double')",v.Local.sBuckets,v.Local.sExpression)
+		f.Data.DataTable.AddExpressionColumn("ConvDt","Buckets_GSS","long",v.Local.sExpression)
+	f.Intrinsic.Control.EndIf
+	
+	f.Intrinsic.Control.If(v.Local.sIntervalDays.IsNumeric)
+		f.Data.Datatable.AddColumn("ConvDt","Int_Days_GSS","long",v.Local.sIntervalDays.Long)
+	f.Intrinsic.Control.Else
+		f.Intrinsic.String.Build("CONVERT({0},'System.Double')",v.Local.sIntervalDays,v.Local.sExpression)
+		f.Data.DataTable.AddExpressionColumn("ConvDt","Int_Days_GSS","long",v.Local.sExpression)
+	f.Intrinsic.Control.EndIf
+	
+	f.Intrinsic.Control.If(v.Local.sDaysConsume.IsNumeric)
+		f.Data.Datatable.AddColumn("ConvDt","Days_Consume_GSS","long",v.Local.sDaysConsume.Long)
+	f.Intrinsic.Control.Else
+		f.Intrinsic.String.Build("CONVERT({0},'System.Double')",v.Local.sDaysConsume,v.Local.sExpression)
+		f.Data.DataTable.AddExpressionColumn("ConvDt","Days_Consume_GSS","long",v.Local.sExpression)
+	f.Intrinsic.Control.EndIf
+	
+	f.Intrinsic.Control.If(v.Local.sSecDays.IsNumeric)
+		f.Data.Datatable.AddColumn("ConvDt","SEC_DAYS_GSS","long",v.Local.sSecDays.Long)
+	f.Intrinsic.Control.Else
+		f.Intrinsic.String.Build("CONVERT({0},'System.Double')",v.Local.sSecDays,v.Local.sExpression)
+		f.Data.DataTable.AddExpressionColumn("ConvDt","SEC_DAYS_GSS","long",v.Local.sExpression)
+	f.Intrinsic.Control.EndIf
+	
+	f.Intrinsic.Control.If(v.Local.sThdDays.IsNumeric)
+		f.Data.Datatable.AddColumn("ConvDt","THD_DAYS_GSS","long",v.Local.sThdDays.Long)
+	f.Intrinsic.Control.Else
+		f.Intrinsic.String.Build("CONVERT({0},'System.Double')",v.Local.sThdDays,v.Local.sExpression)
+		f.Data.DataTable.AddExpressionColumn("ConvDt","THD_DAYS_GSS","long",v.Local.sExpression)
+	f.Intrinsic.Control.EndIf
+	
+f.Intrinsic.Control.Else
+	v.Local.sGenFile.set("")
+	f.Data.Datatable.AddColumn("ConvDt","GEN_DET_GSS","String",v.Local.sGenDetail)
+	f.Data.Datatable.AddColumn("ConvDt","Buckets_GSS","long")
+	f.Data.Datatable.AddColumn("ConvDt","Int_Days_GSS","long")
+	f.Data.Datatable.AddColumn("ConvDt","Days_Consume_GSS","long")
+	f.Data.Datatable.AddColumn("ConvDt","SEC_DAYS_GSS","long")
+	f.Data.Datatable.AddColumn("ConvDt","THD_DAYS_GSS","long")
+	
+f.Intrinsic.Control.EndIf
+
+f.Data.Datatable.AddColumn("ConvDt","USer_1_GSS","String",v.Local.sUser1.trim)
+
+f.Data.Datatable.AddColumn("ConvDt","USer_2_GSS","String",v.Local.sUser2.trim)
+
+f.Data.Datatable.AddColumn("ConvDt","Comment_GSS","String",v.Local.sComment.trim)
+
+f.Data.DataTable.AddColumn("ConvDt","Imp_Source_GSS","String",v.Global.sImpSource.Trim)
+
+f.Data.DataTable.AddColumn("ConvDt","Line_Type_GSS","String",v.Global.sLineType.Trim)
+
+f.Data.DataTable.AddColumn("ConvDt","Total_Qty_GSS","Long")
+
+f.Data.DataView.create("ConvDt","ConvVw",22,"","partRev_GSS asc,Ord_date_GSS asc")
+
+'once this is all done. i am now creating the export file.
+f.Intrinsic.Control.if(v.Local.bGenFile)
+	f.Data.DataView.ToString("ConvDt","ConvVw","Header_GSS*!*Cust_GSS*!*ShipTo_GSS*!*Part_GSS*!*Rev_GSS*!*Location*!*Cust_Part_GSS*!*DESC_GSS*!*Order_dates_GSS*!*INV_Source_GSS*!*DOC_NO_GSS*!*Qty_GSS*!*Gen_DET_GSS*!*Buckets_GSS*!*Int_Days_GSS*!*Days_Consume_GSS*!*SEC_DAYS_GSS*!*THD_DAYS_GSS*!*USer_1_GSS*!*USer_2_GSS*!*Comment_GSS*!*Imp_Source_GSS",v.Ambient.Tab,v.Ambient.NewLine,v.Local.sOutData)
+	F.Intrinsic.String.Build("{0}\ForeCast_Conv_{1}.txt",v.Global.sXPFolder,V.Ambient.Now,V.Local.sOutFile)
+	f.Intrinsic.File.MakeFilenameFriendly(v.Local.sOutFile,v.Local.sOutFile)
+	f.Intrinsic.file.String2File(v.Local.sOutFile,v.Local.sOutData)
+	F.Intrinsic.File.MoveFile(V.Global.sFullFileName,V.Global.sBckUpFolder,V.Local.iRet)
+f.Intrinsic.Control.Else
+	Function.Data.DataView.ToDataTableDistinct("ConvDt","ConvVw","TempDt","PartRev_GSS")
+
+	f.Intrinsic.Control.for(v.Local.iCount,0,v.DataTable.TempDt.RowCount--,1)
+		f.Intrinsic.Control.If(v.DataTable.tempDt(v.Local.iCount).partrev_GSS!fieldValTrim,<>,"")
+			f.Intrinsic.String.Build("PartRev_GSS = '{0}'",v.DataTable.tempDt(v.Local.iCount).partrev_GSS!fieldVal,v.Local.sfilter)
+			f.Data.DataView.SetFilter("ConvDt","ConvVw",v.Local.sfilter)
+
+			f.Data.DataView.SetSort("ConvDt","ConvVw","Ord_date_GSS asc")
+			f.Data.DataTable.Compute("ConvDt","Sum(Qty_GSS)",v.Local.sfilter,v.Local.iHold)
+			f.Data.DataView.SetValue("ConvDt","ConvVw",0,"Total_Qty_GSS",v.Local.iHold)
+			
+			f.Data.DataView.ToString("ConvDt","ConvVw","Line_GSS*!*Order_dates_GSS*!*Qty_GSS*!*Line_Type_GSS",v.Ambient.Tab,v.Ambient.NewLine,v.Local.sOutLine)
+			
+			f.Intrinsic.String.Build("{0} and Total_Qty_GSS > 0",v.Local.sfilter,v.Local.sfilter)
+			f.Data.DataView.SetFilter("ConvDt","ConvVw",v.Local.sfilter)
+			f.Data.DataView.ToString("ConvDt","ConvVw","Header_GSS*!*Cust_GSS*!*ShipTo_GSS*!*Part_GSS*!*Rev_GSS*!*Location_GSS*!*Cust_Part_GSS*!*DESC_GSS*!*Order_dates_GSS*!*INV_Source_GSS*!*DOC_NO_GSS*!*Total_Qty_GSS*!*Gen_DET_GSS*!*Buckets_GSS*!*Int_Days_GSS*!*Days_Consume_GSS*!*SEC_DAYS_GSS*!*THD_DAYS_GSS*!*USer_1_GSS*!*USer_2_GSS*!*Comment_GSS*!*Imp_Source_GSS",v.Ambient.Tab,v.Ambient.NewLine,v.Local.sOutHead)
+			
+			f.Intrinsic.String.Build("{0}{1}{2}{1}",v.Local.sOutHead,v.Ambient.NewLine,v.Local.sOutLine,v.Local.sOutHead)
+			f.Intrinsic.String.Build("{0}{1}",v.Local.sOutData,v.Local.sOutHead,v.Local.sOutData)		
+		f.Intrinsic.Control.EndIf
+	f.Intrinsic.Control.Next(v.Local.iCount)
+
+	f.Intrinsic.String.Format(v.Ambient.Date,"mmddyyyy",v.Local.sDstamp)
+	f.Intrinsic.String.Format(v.Ambient.now,"HhSs",v.Local.sTStamp)
+	F.Intrinsic.String.Build("{0}\ForeCast_Conv_{1}_{2}.txt",v.Global.sXPFolder,v.Local.sDstamp,v.Local.sTStamp,V.Local.sOutFile)
+	f.Intrinsic.String.Replace(v.Local.sOutData," 12:00:00 AM","",v.Local.sOutData)
+	f.Intrinsic.file.String2File(v.Local.sOutFile,v.Local.sOutData)
+	
+	f.Intrinsic.String.Build("File converted successfully!{0}Converted file located at: '{1}'",v.Ambient.NewLine,v.Local.sOutFile,v.Local.sMsg)
+	f.Intrinsic.UI.Msgbox(v.Local.sMsg)
+f.Intrinsic.Control.EndIf
+f.Intrinsic.UI.CloseWaitDialog
+gui.fImpMaintOrImport..Enabled(True)
+
+
+Program.Sub.cmdImport_Click.End
+
+Program.Sub.cmdSave_Click.Start
+v.Local.sSql.Declare
+v.Local.bGenFile.Declare
+v.Local.bCustXref.Declare
+v.Local.bSeperateRev.Declare
+v.Local.sCustomer.Declare
+v.Local.sLocation.Declare
+v.Local.sPath.Declare
+v.Local.sUser1.Declare
+v.Local.sUser2.Declare
+v.Local.sComment.Declare
+v.Local.sImpHeader.Declare
+v.Local.sPart.Declare
+v.local.sRev.Declare
+v.Local.sOrderDate.Declare
+v.Local.sQty.Declare
+v.Local.sBuckets.Declare
+v.Local.sIntervalDays.Declare
+v.Local.sDaysConsume.Declare
+v.Local.sSecDays.Declare
+v.Local.sThdDays.Declare
+v.Local.bExists.Declare
+gui.fImpMaintOrImport..Enabled(false)
+
+v.Local.sCustomer.Set(v.Screen.fImpMaintOrImport!txtCustID.text)
+v.Local.sUser1.Set(v.Screen.fImpMaintOrImport!txtUser1.text)
+v.Local.sUser2.Set(v.Screen.fImpMaintOrImport!txtUser2.text)
+v.Local.sComment.Set(v.Screen.fImpMaintOrImport!txtComment.text)
+v.Local.sLocation.Set(v.Screen.fImpMaintOrImport!txtLocation.text)
+v.Local.sImpHeader.Set(v.Screen.fImpMaintOrImport!txtImpHeader.text)
+v.Local.sPart.Set(v.Screen.fImpMaintOrImport!ddlPart.text)
+v.Local.sRev.Set(v.Screen.fImpMaintOrImport!ddlRev.text)
+v.Local.sOrderDate.Set(v.Screen.fImpMaintOrImport!ddlOrderDate.text)
+v.Local.bGenFile.Set(v.Screen.fImpMaintOrImport!chkGenDet.checkedasboolean)
+v.Local.bSeperateRev.Set(v.Screen.fImpMaintOrImport!chkRev.checkedasboolean)
+v.Local.bCustXref.Set(v.Screen.fImpMaintOrImport!chkUseCustomerXref.checkedasboolean)
+
+
+f.Intrinsic.String.Replace(v.Local.sImpHeader,v.Ambient.NewLine,"",v.Local.sImpHeader)
+
+f.Intrinsic.string.Build("{0}\BackUp",v.Global.sXPFolder,v.Local.sPath)
+f.Intrinsic.File.DirExists(v.Local.sPath,v.Local.bExists)
+f.Intrinsic.Control.If(v.local.bExists,=,false)
+	f.Intrinsic.File.CreateDir(v.Local.sPath)
+f.Intrinsic.Control.EndIf
+v.Global.sBckUpFolder.Set(v.Local.sPath)
+f.Intrinsic.Control.If(v.Local.sCustomer.Trim,=,"","OR",v.Global.sXPFolder.Trim,=,"",v.Global.sImpSource.Trim,=,"",v.Local.sImpHeader.Trim,=,"")
+	f.Intrinsic.UI.Msgbox("You need to select a customer, an export folder, an import source, an inventory source and have the import header list in order to save the configuration.")
+	gui.fImpMaintOrImport..Enabled(True)
+	f.Intrinsic.Control.ExitSub
+f.Intrinsic.Control.EndIf
+
+f.Intrinsic.Control.If(v.Local.bSeperateRev)
+	f.Intrinsic.Control.If(v.Local.sRev.Trim,=,"")
+		f.Intrinsic.UI.Msgbox("You need to map a column for the rev in order to save the configuration.")
+		gui.fImpMaintOrImport..Enabled(True)
+		f.Intrinsic.Control.ExitSub
+	f.Intrinsic.Control.EndIf
+f.Intrinsic.Control.EndIf
+f.Intrinsic.Control.If(v.Local.bGenFile)
+	v.Local.sQty.set(v.Screen.fImpMaintOrImport!ddlQtyHeader.text)
+	v.Local.sBuckets.set(v.Screen.fImpMaintOrImport!cboBuckets.text)
+	v.Local.sIntervalDays.set(v.Screen.fImpMaintOrImport!cboIntDays.text)
+	v.Local.sDaysConsume.set(v.Screen.fImpMaintOrImport!cboDays2Consume.text)
+	v.Local.sSecDays.set(v.Screen.fImpMaintOrImport!cbo2ndDays.text)
+	v.Local.sThdDays.set(v.Screen.fImpMaintOrImport!cbo3rdDays.text)
+	f.Intrinsic.Control.If(v.Local.sQty.Trim,=,"","OR",v.Local.sBuckets.Trim,=,"",v.Local.sIntervalDays.Trim,=,"",v.Local.sDaysConsume.Trim,=,"",v.Local.sSecDays.Trim,=,"",v.Local.sThdDays.Trim,=,"")
+		f.Intrinsic.UI.Msgbox("You need to map the columns to the fields listed in the generate detail frame in order to save the configuration.")
+		gui.fImpMaintOrImport..Enabled(True)
+		f.Intrinsic.Control.ExitSub
+	f.Intrinsic.Control.EndIf
+f.Intrinsic.Control.Else
+	v.Local.sQty.set(v.Screen.fImpMaintOrImport!ddlQtyLine.text)
+	f.Intrinsic.Control.If(v.Local.sQty.Trim,=,"","OR",v.global.sLineType.Trim,=,"")
+		f.Intrinsic.UI.Msgbox("You need to map the columns to the fields listed in the generate detail frame and select a line type in order to save the configuration.")
+		gui.fImpMaintOrImport..Enabled(True)
+		f.Intrinsic.Control.ExitSub
+	f.Intrinsic.Control.EndIf
+f.Intrinsic.Control.EndIf
+
+f.Intrinsic.Control.If(v.DataTable.ConfDt.RowCount,=,0)
+	f.Intrinsic.String.Build("Insert into GCG_5318_FORECAST (PROFILE,Customer,import_source,inventory_source,line_type,XP_folder,user_1,User_2,comment,location,import_header,part,seperate_rev,Rev,cust_xref,Order_date,Gen_detail,quantity,No_Buckets,interval_days,DAYS_CONSUME,SEC_DAYS,THD_DAYS) values ('DEFAULT','{0}','{1}','{2}','{3}','{4}','{5}','{6}','{7}','{8}','{9}','{10}',{11},'{12}',{13},'{14}',{15},'{16}','{17}','{18}','{19}','{20}','{21}')",v.Local.sCustomer.Trim,v.Global.sImpSource.Trim,v.Global.sInvSource.Trim,v.Global.sLineType.Trim,v.Global.sXPFolder,v.Local.sUser1.trim,v.Local.sUser2.trim,v.Local.sComment.trim,v.Local.sLocation.trim,v.Local.sImpHeader.trim,v.Local.sPart,v.Local.bSeperateRev.Long,v.Local.sRev.Set,v.Local.bCustXref.Long,v.Local.sOrderDate.trim,v.Local.bGenFile.long,v.Local.sQty.Trim,v.Local.sBuckets.Trim,v.Local.sIntervalDays.Trim,v.Local.sDaysConsume.Trim,v.Local.sSecDays.Trim,v.Local.sThdDays.Trim,v.Local.sSql)
+f.Intrinsic.Control.Else
+	f.Intrinsic.String.Build("update GCG_5318_FORECAST set Customer = '{0}',import_source = '{1}',inventory_source = '{2}',line_type = '{3}',XP_folder = '{4}',user_1 = '{5}',User_2 = '{6}',comment = '{7}',location = '{8}',import_header = '{9}',part = '{10}',seperate_rev = {11},Rev = '{12}',cust_xref = {13},Order_date = '{14}',Gen_detail = {15},quantity = '{16}',No_Buckets = '{17}',interval_days = '{18}',DAYS_CONSUME = '{19}',SEC_DAYS = '{20}',THD_DAYS = '{21}' where profile = 'DEFAULT'",v.Local.sCustomer.Trim,v.Global.sImpSource.Trim,v.Global.sInvSource.Trim,v.Global.sLineType.Trim,v.Global.sXPFolder,v.Local.sUser1.trim,v.Local.sUser2.trim,v.Local.sComment.trim,v.Local.sLocation.trim,v.Local.sImpHeader.trim,v.Local.sPart,v.Local.bSeperateRev.Long,v.Local.sRev.Set,v.Local.bCustXref.Long,v.Local.sOrderDate.trim,v.Local.bGenFile.long,v.Local.sQty.Trim,v.Local.sBuckets.Trim,v.Local.sIntervalDays.Trim,v.Local.sDaysConsume.Trim,v.Local.sSecDays.Trim,v.Local.sThdDays.Trim,v.Local.sSql)
+f.Intrinsic.Control.EndIf
+
+
+f.Intrinsic.Control.Try
+	f.ODBC.Connection!conx.OpenCompanyConnection
+	f.ODBC.Connection!conx.execute(v.Local.sSql)
+f.Intrinsic.Control.Catch
+	f.Intrinsic.UI.Msgbox("Oops! Something went wrong. Contact IT Support.")
+f.Intrinsic.Control.Finally
+	f.ODBC.Connection!conx.Close
+f.Intrinsic.Control.EndTry
+
+gui.fImpMaintOrImport..Enabled(True)
+
+
+
+
+
+
+Program.Sub.cmdSave_Click.End
+
+Program.Sub.cmdLocation_Click.Start
+v.Local.sSql.Declare
+v.local.sTitles.Declare
+v.Local.iWidths.Declare
+v.Local.sRet.Declare
+v.Local.sDisp.Declare
+
+'create browser
+v.Local.sSql.Set("select Location,Location_DESC from V_LOCATIONS")
+F.Intrinsic.String.Split("Location*!*Description","*!*",V.Local.sTitles)
+F.Intrinsic.String.Split("300*!*600","*!*",V.Local.iWidths)
+F.Intrinsic.UI.SetBrowserHotTypeAhead(True)
+
+f.Intrinsic.Control.Try
+	f.ODBC.Connection!conx.OpenCompanyConnection
+	f.Intrinsic.UI.Browser("Select Location","Conx",V.Local.sSql,V.Local.sTitles,V.Local.iWidths,V.Local.sRet)
+f.Intrinsic.Control.Catch
+	f.Intrinsic.UI.Msgbox("Oops! Something went wrong. Contact IT Support.")
+f.Intrinsic.Control.Finally
+	f.ODBC.Connection!conx.Close
+f.Intrinsic.Control.EndTry
+
+
+'handle return
+F.Intrinsic.Control.If(V.Local.sRet,=,"***CANCEL***")
+	f.Intrinsic.Control.ExitSub
+f.Intrinsic.Control.else
+	f.Intrinsic.String.Split(v.Local.sRet,"*!*",v.local.sRet)
+	gui.fImpMaintOrImport.txtLocation.Text(v.Local.sRet(0))
+f.Intrinsic.Control.EndIf
+Program.Sub.cmdLocation_Click.End
+
+Program.Sub.ddlImpSource_Change.Start
+v.Local.sDDL.Declare
+v.Local.sDDL.Set(v.Screen.fImpMaintOrImport!ddlImpSource.text)
+f.Intrinsic.Control.SelectCase(v.Local.sDDL.Trim)
+f.Intrinsic.Control.Case("EDI")
+	v.Global.sImpSource.Set("E")
+f.Intrinsic.Control.Case("IMPORT")
+	v.Global.sImpSource.Set("I")
+f.Intrinsic.Control.EndSelect
+Program.Sub.ddlImpSource_Change.End
+
+Program.Sub.ddlInvSource_Change.Start
+v.Local.sDDL.Declare
+v.Local.sDDL.Set(v.Screen.fImpMaintOrImport!ddlInvSource.text)
+f.Intrinsic.Control.SelectCase(v.Local.sDDL.Trim)
+f.Intrinsic.Control.Case("PURCHASED")
+	v.Global.sInvSource.Set("P")
+f.Intrinsic.Control.Case("MANUFACTURED")
+	v.Global.sInvSource.Set("M")
+f.Intrinsic.Control.Case("PULL SOURCE FROM INVENTORY")
+	v.Global.sInvSource.Set("")
+f.Intrinsic.Control.EndSelect
+Program.Sub.ddlInvSource_Change.End
+
+Program.Sub.ddlLineType_Change.Start
+v.Local.sDDL.Declare
+v.Local.sDDL.Set(v.Screen.fImpMaintOrImport!ddlLineType.text)
+f.Intrinsic.Control.SelectCase(v.Local.sDDL.Trim)
+f.Intrinsic.Control.Case("FIRM")
+	v.Global.sLineType.Set("0")
+f.Intrinsic.Control.Case("PLANNED")
+	v.Global.sLineType.Set("1")
+f.Intrinsic.Control.Case("FORECAST")
+	v.Global.sLineType.Set("2")
+f.Intrinsic.Control.EndSelect
+Program.Sub.ddlLineType_Change.End
